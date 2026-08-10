@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Blog - MyBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .blog-box {
+            background: white;
+            width: 85%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, textarea {
+            width: 95%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        textarea {
+            min-height: 180px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        a {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>MyBlog</h2>
+</header>
+
+<div class="blog-box">
+
+    <h1>Create New Blog ✍️</h1>
+
+    <form onsubmit="publishBlog(event)">
+
+        <input type="text"
+               id="title"
+               placeholder="Blog Title"
+               required>
+
+        <input type="text"
+               id="author"
+               placeholder="Author Name"
+               required>
+
+        <textarea
+            id="content"
+            placeholder="Write your blog here..."
+            required></textarea>
+
+        <br>
+
+        <button type="submit">
+            Publish Blog
+        </button>
+
+    </form>
+
+    <p>
+        <a href="dashboard.html">← Back to Dashboard</a>
+    </p>
+
+</div>
+
+<script>
+function publishBlog(event) {
+
+    event.preventDefault();
+
+    let title = document.getElementById("title").value;
+
+    alert("Blog Published Successfully! 🎉\n\n" + title);
+
+    document.querySelector("form").reset();
+}
+</script>
+
+</body>
+</html>
